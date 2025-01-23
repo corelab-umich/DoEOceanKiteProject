@@ -51,9 +51,9 @@ for i = 1:n
             thrLength = thrSweep(j);    initThrLength =  thrSweep(j);
             el = asin(altitude/thrLength);                              %   rad - Initial elevation angle
            
-       
-                b = 20; %Figure-8 Path Height
-                a = 60;%Figure-8 Width
+                aoaSPDeg=16;% Constant AoA Setpoint in Degrees
+                b = 20; % Figure-8 Path Height
+                a = 60;% Figure-8 Width
 
             %% Load vehicle model
             loadComponent('ultDoeKite');
@@ -66,6 +66,7 @@ for i = 1:n
             loadComponent('pathFollowWithAoACtrlDOE');             %   Path-following controller with AoA control
             loadComponent('pathFollowingTether');                       %   Load tether model
             
+            fltCtrl.AoAConst.setValue(aoaSPDeg.*pi/180,'deg'); % Set Constant AoA setpoint (the unit is degrees but its really in radians)
             %% Load and initalize tether
 
             %Set number of thr nodes
