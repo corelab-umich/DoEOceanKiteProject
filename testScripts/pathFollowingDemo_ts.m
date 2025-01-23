@@ -3,7 +3,7 @@ clc;
 % close all;
 Simulink.sdi.clear
 
-saveSim=0;%Binary flag to save sim results
+saveSim=1;%Binary flag to save sim results
 animateFlag=1;% Binary flag to shown an animation post-sim
 
 %Simulation sweep parameters (all of these can be vectors to simulate multiple scenerios sequentially)
@@ -20,7 +20,7 @@ pathErr = zeros(n,m,r);
 dragRatio = zeros(n,m,r);
 Pow = cell(n,m,r);
 
-fpath = 'C:\Users\';%Save Path for simulations
+fpath = '/Users/limengliu/Documents/Research/KITE/DoEOceanKiteProject/test_simulation_result/';%Save Path for simulations
 
 %Make save directory if it does not exist
 if ~exist(fpath,'dir') && saveSim
