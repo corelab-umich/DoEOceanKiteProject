@@ -51,9 +51,9 @@ for i = 1:n
             thrLength = thrSweep(j);    initThrLength =  thrSweep(j);
             el = asin(altitude/thrLength);                              %   rad - Initial elevation angle
            
-       
-                b = 20; %Figure-8 Path Height
-                a = 60;%Figure-8 Width
+                aoaSpDeg=18;% AoA Setpoint in Degrees
+                b = 25; %Figure-8 Path Height
+                a = 80;%Figure-8 Width
 
             %% Load vehicle model
             loadComponent('ultDoeKite');
@@ -111,7 +111,7 @@ for i = 1:n
             %%  Controller User Def. Parameters and dependant properties
             fltCtrl.setFcnName(PATHGEOMETRY,'');
             fltCtrl.setInitPathVar(vhcl.initPosVecGnd.Value,hiLvlCtrl.basisParams.Value,gndStn.posVec.Value);
-
+            fltCtrl.AoAConst.setValue(aoaSpDeg*pi/180,'deg')
             
             %%  Set up critical system parameters
             simParams = SIM.simParams;  simParams.setDuration(tFinal,'s');  dynamicCalc = '';
