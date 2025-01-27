@@ -74,7 +74,7 @@ for i = 1:n
             thr.tether1.numNodes.setValue(max([10 thrLength/200]),'');
             %Set tether physical properties
             thr.tether1.setDensity(1000,'kg/m^3')
-            thr.tether1.diameter.setValue(1.25e-3,'m')
+            thr.tether1.diameter.setValue(1.25e-2,'m')
             %% Load Enviornment
             loadComponent('ConstXYZT');                         %   Constant flow
             ENVIRONMENT = 'env4turb';                           %   Four turbines
