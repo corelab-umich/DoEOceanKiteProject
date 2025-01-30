@@ -20,7 +20,7 @@ pathErr = zeros(n,m,r);
 dragRatio = zeros(n,m,r);
 Pow = cell(n,m,r);
 
-fpath = [pwd filesep 'outputs' filesep];%Save Path for simulations
+fpath = [pwd filesep 'outputs' filesep 'assignment1' filesep];%Save Path for simulations
 
 %Make save directory if it does not exist
 if ~exist(fpath,'dir') && saveSim
@@ -153,9 +153,9 @@ end
 %% Plotting
 close all
 
-speed0p75 = load("outputs\PathFollow_V-0.75_Alt-200_thr-400.mat")
-speed1p0 = load("outputs\PathFollow_V-1.00_Alt-200_thr-400.mat")
-speed1p25 = load("outputs\PathFollow_V-1.25_Alt-200_thr-400.mat")
+speed0p75 = load([fpath 'PathFollow_V-0.75_Alt-200_thr-400.mat'])
+speed1p0 = load([fpath 'PathFollow_V-1.00_Alt-200_thr-400.mat'])
+speed1p25 = load([fpath 'PathFollow_V-1.25_Alt-200_thr-400.mat'])
 
 hold on;
 plot(speed0p75.tsc.netPower, 'DisplayName', "v = 0.75 m/s")
