@@ -20,7 +20,7 @@ pathErr = zeros(n,m,r);
 dragRatio = zeros(n,m,r);
 Pow = cell(n,m,r);
 
-fpath = [pwd filesep 'outputs' filesep];%Save Path for simulations
+fpath = [pwd filesep 'outputs2' filesep];%Save Path for simulations
 
 %Make save directory if it does not exist
 if ~exist(fpath,'dir') && saveSim
