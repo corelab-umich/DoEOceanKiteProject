@@ -1,6 +1,6 @@
 clear all;
 clc;
-% close all;
+close all;
 Simulink.sdi.clear
 
 saveSim=1;%Binary flag to save sim results
@@ -196,8 +196,9 @@ for rotoridx = 1:4
     titlestring = "Rotor " + rotoridx;
     title(titlestring)
     xlabel("Time [s]")
-    ylabel("Efficiency")
-    legend('Location', 'southeast')
+    ylabel("Speed")
+%     legend('Location', 'southeastoutside')
+    legend
 end
 filename = fpath + "genSpeed.fig";
 saveas(gcf, filename)
